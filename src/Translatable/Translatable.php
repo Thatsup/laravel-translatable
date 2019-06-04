@@ -17,6 +17,7 @@ use Illuminate\Database\Query\Builder as QueryBuilder;
  * @property-read string $translationForeignKey
  * @property-read string $localeKey
  * @property-read bool $useTranslationFallback
+ * @property-read string $fallbackLocale
  *
  * @mixin Model
  */
@@ -238,6 +239,10 @@ trait Translatable
             if ($fallback = $this->getLanguageFromCountryBasedLocale($locale)) {
                 return $fallback;
             }
+        }
+
+        if (isset($this->fallbackLocale) && $this->fallbackLocale !== null) {
+            return $this->fallbackLocale;
         }
 
         return config('translatable.fallback_locale');

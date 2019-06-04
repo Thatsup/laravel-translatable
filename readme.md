@@ -407,15 +407,18 @@ return [
 ];
 ```
 
-You can also define *per-model* the default for "if fallback should be used", by setting the `$useTranslationFallback` property:
+You can also define *per-model* the fallback defaults, by setting the `$useTranslationFallback` and `$fallbackLocale` properties:
 
 ```php
 class Country {
 
     public $useTranslationFallback = true;
 
+    public $fallbackLocale = 'fr';
+
 }
 ```
+
 
 #### Fallback per property 
 

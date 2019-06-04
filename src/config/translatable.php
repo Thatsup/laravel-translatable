@@ -77,7 +77,8 @@ return [
     |
     | A fallback locale is the locale being used to return a translation
     | when the requested translation is not existing. To disable it
-    | set it to false.
+    | set it to false. This value will be overridden by the property
+    | $fallbackLocale when defined
     |
     */
     'fallback_locale' => 'en',
